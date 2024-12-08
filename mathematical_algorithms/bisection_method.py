@@ -1,8 +1,8 @@
 
 """
-Пошук коренів нелінійного рівняння методом метод ділення навпіл (дихотомії)  - bisection method:
-Time Complexity: оцінити / знайти  самостійно
-Auxiliary Space: оцінити / знайти  самостійно
+Пошук коренів нелінійного рівняння методом метод ділення навпіл (дихотомії) - bisection method:
+Time Complexity: оцінити / знайти самостійно
+Auxiliary Space: оцінити / знайти самостійно
 
 """
 
@@ -11,6 +11,7 @@ from scipy.optimize import fsolve
 
 from busy_time_meter import busy_time_meter
 
+# Пошук коренів нелінійного рівняння
 #   ділення навпіл (дихотомії)
 @busy_time_meter
 def bisection(f, a, b, epsilon):
@@ -43,18 +44,11 @@ def bisection(f, a, b, epsilon):
 
 def bisection_main(fun, low, high, n):
     epsilon = 1/n
-    # Пошук коренів нелінійного рівняння
-
+    print("\n Пошук коренів нелінійного рівняння, ділення навпіл (дихотомії):")
     # ---------------------- Аналітика складності алгоритму  ---------------------------
     print(bisection(fun, low, high, epsilon), ' ', epsilon)
 
-    # Пошук коренів із бібліотекою scipy: Знайдіть корінь вектор-функції
-    sol = optimize.root(fun, [low, high])
-    print(sol.x)
 
-    # Пошук коренів із бібліотекою scipy: Знайдіть корені функції.
-    sol = fsolve(fun, [low, high])
-    print(sol)
 
 
 

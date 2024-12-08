@@ -6,9 +6,6 @@ Auxiliary Space: O(1)
 
 """
 
-import numpy as np
-from scipy import integrate
-
 from busy_time_meter import busy_time_meter
 
 @busy_time_meter
@@ -35,18 +32,10 @@ def trapezoidal(f, x0, xn, n):
 
 
 def trapezoidal_main(function, low, high, n):
-
+    print("\n Інтегрування методом трапецій: ")
     # ---------------------- Аналітика складності алгоритма  ---------------------------
     print(trapezoidal(function, low, high, n))
 
-    # Інтегрування із бібліотекою scipy
-    print(integrate.quad(function, low, high))
-
-    # Інтегрування із бібліотекою numpy
-    x = np.linspace(low, high, num=n)
-    # y = a / (1 + x ** 2)
-    # # y =  a * x ** 2 + b * x + c
-    # print(np.trapz(y, x))
 
 
 

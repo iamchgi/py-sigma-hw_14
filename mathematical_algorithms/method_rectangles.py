@@ -6,10 +6,7 @@ Auxiliary Space: O(1)
 
 """
 
-from scipy import integrate
-
 from busy_time_meter import busy_time_meter
-
 
 # Інтегрування методом прямокутників (лівий прямокутник)
 @busy_time_meter
@@ -58,26 +55,11 @@ def rectint_c(f, a, b, n):
 
 
 def rectangle_main(fun, low, high, n):
-
-    # параметри інтегрування
-    low = 0
-    high = 10
-    n = 1000000
-
-
-    a = 1
-    b = 2
-    c = 3
-
-    fun = lambda x: a * x ** 2 + b * x + c
-
-
+    print("\n Інтегрування методом прямокутників: ")
     # ---------------------- Аналітика складності алгоритму  ---------------------------
     print(rectint_l(fun, low, high, n))
     print(rectint_c(fun, low, high, n))
 
-    # Інтегрування із бібліотекою scipy
-    print(integrate.quad(fun, low, high))
 
 
 

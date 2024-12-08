@@ -6,7 +6,6 @@ Auxiliary Space: оцінити / знайти  самостійно
 
 """
 
-from scipy import integrate
 import numpy as np
 from busy_time_meter import busy_time_meter
 
@@ -31,12 +30,10 @@ def simpson_rule(f, a, b, n):
 
 
 def simpson_main(fun, low, high, n):
-
+    print("\n Інтегрування за правилом Сімпсона: ")
     # ---------------------- Аналітика складності алгоритму  ---------------------------
     print(simpson_rule(fun, low, high, n))
 
-    # Інтегрування із бібліотекою scipy
-    print(integrate.quad(fun, low, high))
 
 
 

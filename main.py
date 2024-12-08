@@ -13,7 +13,7 @@ matplotlib                   3.9.2
 import numpy as np
 from matplotlib import pyplot as plt
 
-from mathematical_algorithms import trapezoidal_main, bisection_main, simpson_main, rectangle_main, chord_main
+from mathematical_algorithms import *
 
 
 def graph_fun(fun, lo, hi, n) -> None:
@@ -38,27 +38,29 @@ if __name__ == '__main__':
     # ------------------------- параметри інтегрування ----------------------------
     low = -5
     high = 6
-    n = 10_000
+    n = 100_000
 
     a = 1
     b = 2
-    c = -2
+    c = -4
 
     # Задаємо лямбда функцію
     function = lambda x: a * x ** 2 + b * x + c
 
     graph_fun(function, low, high, n)
 
-    print(" Інтегрування методом трапецій ")
     trapezoidal_main(function, low, high, n)
-    print("   ділення навпіл (дихотомії) ")
-    bisection_main(function, low, high, n)
-    print(" Інтегрування за правилом Сімпсона ")
     simpson_main(function, low, high, n)
-    print(" Інтегрування методом прямокутників ")
     rectangle_main(function, low, high, n)
-    print(" hord ")
+
+    x = np.linspace(low, high, num=n)
+    y = a * x ** 2 + b * x + c
+    integrated_iteration(function, low, high, y, x)
+
     chord_main(function, low, high, n)
+    bisection_main(function, low, high, n)
+
+    integrated_root_search(function,low,high)
 
 """
 РЕЗУЛЬТАТ

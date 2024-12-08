@@ -6,8 +6,6 @@ Auxiliary Space: оцінити / знайти  самостійно
 
 """
 
-from scipy.optimize import fsolve
-
 from busy_time_meter import busy_time_meter
 
 
@@ -59,14 +57,10 @@ def secant(f, a, b, epsilon):
 
 
 def chord_main(fun, low, high, n):
-
+    print("\n Пошук коренів нелінійного рівняння hord method: ")
     epsilon = 1/n
 
     # ---------------------- Аналітика складності алгоритму  ---------------------------
-    # Пошук коренів нелінійного рівняння
     print(secant(fun, low, high, epsilon), ' ', epsilon)
 
-    # Пошук коренів із бібліотекою scipy: Знайдіть корені функції.
-    sol = fsolve(fun, [low, high])
-    print(sol)
 
