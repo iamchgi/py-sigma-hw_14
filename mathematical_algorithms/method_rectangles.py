@@ -1,4 +1,3 @@
-
 """
 Розрахунок значення визначеного інтеграла методом прямокутників - method of rectangles:
 Time Complexity: O(n), n - кількість інтервалів
@@ -8,10 +7,10 @@ Auxiliary Space: O(1)
 
 from busy_time_meter import busy_time_meter
 
+
 # Інтегрування методом прямокутників (лівий прямокутник)
 @busy_time_meter
-def rectint_l(f, a, b, n):
-
+def rectangle_int_l(f, a, b, n):
     # лівий прямокутник
 
     total = 0.0
@@ -29,10 +28,10 @@ def rectint_l(f, a, b, n):
 
     return integration, epsilon
 
+
 # Інтегрування методом прямокутників
 @busy_time_meter
-def rectint_c(f, a, b, n):
-
+def rectangle_int_c(f, a, b, n):
     # середній прямокутник
 
     integration = 0
@@ -54,14 +53,16 @@ def rectint_c(f, a, b, n):
     return integration, epsilon
 
 
-def rectangle_main(fun, low, high, n):
+def rectangle_main(fun, low, high, n) -> None:
+    """
+    Виклик Інтегрування методом прямокутників
+    :param fun: лямбда функція
+    :param low: початкове значення інтервалу
+    :param high: кінцеве значення інтервалу
+    :param n: кількість значень на інтервалі
+    :return: None
+    """
     print("\n Інтегрування методом прямокутників: ")
-    # ---------------------- Аналітика складності алгоритму  ---------------------------
-    print(rectint_l(fun, low, high, n))
-    print(rectint_c(fun, low, high, n))
-
-
-
-
-
-
+    # ---------------------- Аналітика складності алгоритму ---------------------------
+    print(rectangle_int_l(fun, low, high, n))
+    print(rectangle_int_c(fun, low, high, n))

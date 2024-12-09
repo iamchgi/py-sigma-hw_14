@@ -24,7 +24,7 @@ def simpson_rule(f, a, b, n):
     integration = h / 3 * (y[0] + 4 * np.sum(y[1:-1:2]) + 2 * np.sum(y[2:-1:2]) + y[-1])
 
     # Похибка інтегрування - без похідної
-    epsilon = ((b - a) ** 5) / (180 * (n ** 2))
+    epsilon = ((b - a) ** 5) / (180 * (n ** 4))
 
     return integration, epsilon
 

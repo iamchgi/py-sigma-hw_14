@@ -1,4 +1,3 @@
-
 """
 Пошук коренів нелінійного рівняння методом метод ділення навпіл (дихотомії)  - bisection method:
 Time Complexity: оцінити / знайти  самостійно
@@ -57,10 +56,8 @@ def secant(f, a, b, epsilon):
 
 
 def chord_main(fun, low, high, n):
-    print("\n Пошук коренів нелінійного рівняння hord method: ")
-    epsilon = 1/n
+    print("\n Пошук коренів нелінійного рівняння метод хорд: ")
+    epsilon = 1 / n
 
     # ---------------------- Аналітика складності алгоритму  ---------------------------
     print(secant(fun, low, high, epsilon), ' ', epsilon)
-
-

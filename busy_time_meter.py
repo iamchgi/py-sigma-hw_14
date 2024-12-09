@@ -11,7 +11,7 @@ def busy_time_meter(func):
         # Початок виміру
         start_time = time.time()
         # Використання сервісів -------------------
-        # cp = cProfile.Profile()  # аналітика складності  використовуємо профайлер
+        # cp = cProfile.Profile()  # аналітика складності використовуємо профайлер
         # cp.enable()
         result = func(*args, **kwargs)
         # Кінець виміру
